@@ -1,0 +1,546 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>Magnum</RootNamespace>
+    <PackageId>Magnum</PackageId>
+    <Company></Company>
+    <Authors>Magnum</Authors>
+    <Product>Magnum</Product>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Caching\AbstractCacheDecorator.cs" />
+    <Compile Remove="Caching\Cache.cs" />
+    <Compile Remove="Caching\CacheItemCallback.cs" />
+    <Compile Remove="Caching\ConcurrentCache.cs" />
+    <Compile Remove="Caching\DictionaryCache.cs" />
+    <Compile Remove="Caching\GenericTypeCache.cs" />
+    <Compile Remove="Caching\KeySelector.cs" />
+    <Compile Remove="Caching\MissingValueProvider.cs" />
+    <Compile Remove="Caching\ReadCache.cs" />
+    <Compile Remove="Caching\ReaderWriterLockedCache.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Magnum\Algorithms\DependencyGraph.cs" Link="Algorithms\DependencyGraph.cs" />
+    <Compile Include="..\Magnum\Algorithms\Implementations\AdjacencyList.cs" Link="Algorithms\Implementations\AdjacencyList.cs" />
+    <Compile Include="..\Magnum\Algorithms\Implementations\DependencyGraphNode.cs" Link="Algorithms\Implementations\DependencyGraphNode.cs" />
+    <Compile Include="..\Magnum\Algorithms\Implementations\Edge.cs" Link="Algorithms\Implementations\Edge.cs" />
+    <Compile Include="..\Magnum\Algorithms\Implementations\Node.cs" Link="Algorithms\Implementations\Node.cs" />
+    <Compile Include="..\Magnum\Algorithms\Implementations\NodeList.cs" Link="Algorithms\Implementations\NodeList.cs" />
+    <Compile Include="..\Magnum\Algorithms\Implementations\NodeTable.cs" Link="Algorithms\Implementations\NodeTable.cs" />
+    <Compile Include="..\Magnum\Algorithms\Implementations\Tarjan.cs" Link="Algorithms\Implementations\Tarjan.cs" />
+    <Compile Include="..\Magnum\Algorithms\Implementations\TarjanNodeProperties.cs" Link="Algorithms\Implementations\TarjanNodeProperties.cs" />
+    <Compile Include="..\Magnum\Algorithms\Implementations\TopologicalSort.cs" Link="Algorithms\Implementations\TopologicalSort.cs" />
+    <Compile Include="..\Magnum\Algorithms\Implementations\TopologicalSortNodeProperties.cs" Link="Algorithms\Implementations\TopologicalSortNodeProperties.cs" />
+    <Compile Include="..\Magnum\Benchmark.cs" Link="Benchmark.cs" />
+    <Compile Include="..\Magnum\Binding\BinderContext.cs" Link="Binding\BinderContext.cs" />
+    <Compile Include="..\Magnum\Binding\FastModelBinder.cs" Link="Binding\FastModelBinder.cs" />
+    <Compile Include="..\Magnum\Binding\FastObjectBinder.cs" Link="Binding\FastObjectBinder.cs" />
+    <Compile Include="..\Magnum\Binding\InstanceBinderContext.cs" Link="Binding\InstanceBinderContext.cs" />
+    <Compile Include="..\Magnum\Binding\ModelBinder.cs" Link="Binding\ModelBinder.cs" />
+    <Compile Include="..\Magnum\Binding\ModelBinderContext.cs" Link="Binding\ModelBinderContext.cs" />
+    <Compile Include="..\Magnum\Binding\ObjectBinder.cs" Link="Binding\ObjectBinder.cs" />
+    <Compile Include="..\Magnum\Binding\ObjectPropertyBinder.cs" Link="Binding\ObjectPropertyBinder.cs" />
+    <Compile Include="..\Magnum\Binding\ObjectPropertyBinderList.cs" Link="Binding\ObjectPropertyBinderList.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\ArrayBinder.cs" Link="Binding\TypeBinders\ArrayBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\BooleanBinder.cs" Link="Binding\TypeBinders\BooleanBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\ByteBinder.cs" Link="Binding\TypeBinders\ByteBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\CharBinder.cs" Link="Binding\TypeBinders\CharBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\DateTimeBinder.cs" Link="Binding\TypeBinders\DateTimeBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\DateTimeOffsetBinder.cs" Link="Binding\TypeBinders\DateTimeOffsetBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\DecimalBinder.cs" Link="Binding\TypeBinders\DecimalBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\DictionaryBinder.cs" Link="Binding\TypeBinders\DictionaryBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\DoubleBinder.cs" Link="Binding\TypeBinders\DoubleBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\EnumBinder.cs" Link="Binding\TypeBinders\EnumBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\EnumerableBinderBase.cs" Link="Binding\TypeBinders\EnumerableBinderBase.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\FloatBinder.cs" Link="Binding\TypeBinders\FloatBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\GuidBinder.cs" Link="Binding\TypeBinders\GuidBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\IntBinder.cs" Link="Binding\TypeBinders\IntBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\ListBinder.cs" Link="Binding\TypeBinders\ListBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\LongBinder.cs" Link="Binding\TypeBinders\LongBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\NullableBinder.cs" Link="Binding\TypeBinders\NullableBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\SByteBinder.cs" Link="Binding\TypeBinders\SByteBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\ShortBinder.cs" Link="Binding\TypeBinders\ShortBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\StringBinder.cs" Link="Binding\TypeBinders\StringBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\TimeSpanBinder.cs" Link="Binding\TypeBinders\TimeSpanBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\UIntBinder.cs" Link="Binding\TypeBinders\UIntBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\ULongBinder.cs" Link="Binding\TypeBinders\ULongBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\UriBinder.cs" Link="Binding\TypeBinders\UriBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\UShortBinder.cs" Link="Binding\TypeBinders\UShortBinder.cs" />
+    <Compile Include="..\Magnum\Binding\TypeBinders\ValueTypeBinder.cs" Link="Binding\TypeBinders\ValueTypeBinder.cs" />
+    <Compile Include="..\Magnum\Caching\AbstractCacheDecorator.cs" Link="Caching\AbstractCacheDecorator.cs" />
+    <Compile Include="..\Magnum\Caching\Cache.cs" Link="Caching\Cache.cs" />
+    <Compile Include="..\Magnum\Caching\CacheItemCallback.cs" Link="Caching\CacheItemCallback.cs" />
+    <Compile Include="..\Magnum\Caching\ConcurrentCache.cs" Link="Caching\ConcurrentCache.cs" />
+    <Compile Include="..\Magnum\Caching\DictionaryCache.cs" Link="Caching\DictionaryCache.cs" />
+    <Compile Include="..\Magnum\Caching\GenericTypeCache.cs" Link="Caching\GenericTypeCache.cs" />
+    <Compile Include="..\Magnum\Caching\KeySelector.cs" Link="Caching\KeySelector.cs" />
+    <Compile Include="..\Magnum\Caching\MissingValueProvider.cs" Link="Caching\MissingValueProvider.cs" />
+    <Compile Include="..\Magnum\Caching\ReadCache.cs" Link="Caching\ReadCache.cs" />
+    <Compile Include="..\Magnum\Caching\ReaderWriterLockedCache.cs" Link="Caching\ReaderWriterLockedCache.cs" />
+    <Compile Include="..\Magnum\Calendar\CheckResult.cs" Link="Calendar\CheckResult.cs" />
+    <Compile Include="..\Magnum\Calendar\DefaultCalendar.cs" Link="Calendar\DefaultCalendar.cs" />
+    <Compile Include="..\Magnum\Calendar\Holidays\BaseCheck.cs" Link="Calendar\Holidays\BaseCheck.cs" />
+    <Compile Include="..\Magnum\Calendar\Holidays\ChristmasDayCheck.cs" Link="Calendar\Holidays\ChristmasDayCheck.cs" />
+    <Compile Include="..\Magnum\Calendar\Holidays\ChristmasDayObserved.cs" Link="Calendar\Holidays\ChristmasDayObserved.cs" />
+    <Compile Include="..\Magnum\Calendar\Holidays\ColumbusDayObserved.cs" Link="Calendar\Holidays\ColumbusDayObserved.cs" />
+    <Compile Include="..\Magnum\Calendar\Holidays\DateTimeExtensions.cs" Link="Calendar\Holidays\DateTimeExtensions.cs" />
+    <Compile Include="..\Magnum\Calendar\Holidays\EasterCheck.cs" Link="Calendar\Holidays\EasterCheck.cs" />
+    <Compile Include="..\Magnum\Calendar\Holidays\FlagDayCheck.cs" Link="Calendar\Holidays\FlagDayCheck.cs" />
+    <Compile Include="..\Magnum\Calendar\Holidays\FlagDayObservedCheck.cs" Link="Calendar\Holidays\FlagDayObservedCheck.cs" />
+    <Compile Include="..\Magnum\Calendar\Holidays\IndependenceDayCheck.cs" Link="Calendar\Holidays\IndependenceDayCheck.cs" />
+    <Compile Include="..\Magnum\Calendar\Holidays\IndependenceDayObservedCheck.cs" Link="Calendar\Holidays\IndependenceDayObservedCheck.cs" />
+    <Compile Include="..\Magnum\Calendar\Holidays\LaborDayCheck.cs" Link="Calendar\Holidays\LaborDayCheck.cs" />
+    <Compile Include="..\Magnum\Calendar\Holidays\MartinLutherKingDayCheck.cs" Link="Calendar\Holidays\MartinLutherKingDayCheck.cs" />
+    <Compile Include="..\Magnum\Calendar\Holidays\MemorialDayObservedCheck.cs" Link="Calendar\Holidays\MemorialDayObservedCheck.cs" />
+    <Compile Include="..\Magnum\Calendar\Months.cs" Link="Calendar\Months.cs" />
+    <Compile Include="..\Magnum\Collections\Algorithms.cs" Link="Collections\Algorithms.cs" />
+    <Compile Include="..\Magnum\Collections\Bag.cs" Link="Collections\Bag.cs" />
+    <Compile Include="..\Magnum\Collections\BigList.cs" Link="Collections\BigList.cs" />
+    <Compile Include="..\Magnum\Collections\Cache.cs" Link="Collections\Cache.cs" />
+    <Compile Include="..\Magnum\Collections\CollectionBase.cs" Link="Collections\CollectionBase.cs" />
+    <Compile Include="..\Magnum\Collections\Comparers.cs" Link="Collections\Comparers.cs" />
+    <Compile Include="..\Magnum\Collections\Deque.cs" Link="Collections\Deque.cs" />
+    <Compile Include="..\Magnum\Collections\DictionaryBase.cs" Link="Collections\DictionaryBase.cs" />
+    <Compile Include="..\Magnum\Collections\Empty.cs" Link="Collections\Empty.cs" />
+    <Compile Include="..\Magnum\Collections\Hash.cs" Link="Collections\Hash.cs" />
+    <Compile Include="..\Magnum\Collections\ListBase.cs" Link="Collections\ListBase.cs" />
+    <Compile Include="..\Magnum\Collections\MultiDictionary.cs" Link="Collections\MultiDictionary.cs" />
+    <Compile Include="..\Magnum\Collections\MultiDictionaryBase.cs" Link="Collections\MultiDictionaryBase.cs" />
+    <Compile Include="..\Magnum\Collections\ObjectToDictionary.cs" Link="Collections\ObjectToDictionary.cs" />
+    <Compile Include="..\Magnum\Collections\OrderedBag.cs" Link="Collections\OrderedBag.cs" />
+    <Compile Include="..\Magnum\Collections\OrderedDictionary.cs" Link="Collections\OrderedDictionary.cs" />
+    <Compile Include="..\Magnum\Collections\OrderedMultiDictionary.cs" Link="Collections\OrderedMultiDictionary.cs" />
+    <Compile Include="..\Magnum\Collections\OrderedSet.cs" Link="Collections\OrderedSet.cs" />
+    <Compile Include="..\Magnum\Collections\Pair.cs" Link="Collections\Pair.cs" />
+    <Compile Include="..\Magnum\Collections\ReadOnlyCollectionBase.cs" Link="Collections\ReadOnlyCollectionBase.cs" />
+    <Compile Include="..\Magnum\Collections\ReadOnlyDictionaryBase.cs" Link="Collections\ReadOnlyDictionaryBase.cs" />
+    <Compile Include="..\Magnum\Collections\ReadOnlyListBase.cs" Link="Collections\ReadOnlyListBase.cs" />
+    <Compile Include="..\Magnum\Collections\ReadOnlyMultiDictionaryBase.cs" Link="Collections\ReadOnlyMultiDictionaryBase.cs" />
+    <Compile Include="..\Magnum\Collections\RedBlack.cs" Link="Collections\RedBlack.cs" />
+    <Compile Include="..\Magnum\Collections\Set.cs" Link="Collections\Set.cs" />
+    <Compile Include="..\Magnum\Collections\Strings.cs" Link="Collections\Strings.cs" />
+    <Compile Include="..\Magnum\Collections\Triple.cs" Link="Collections\Triple.cs" />
+    <Compile Include="..\Magnum\Collections\Tuple.cs" Link="Collections\Tuple.cs" />
+    <Compile Include="..\Magnum\Collections\Util.cs" Link="Collections\Util.cs" />
+    <Compile Include="..\Magnum\CombGuid.cs" Link="CombGuid.cs" />
+    <Compile Include="..\Magnum\CommandLineParser\ArgumentElement.cs" Link="CommandLineParser\ArgumentElement.cs" />
+    <Compile Include="..\Magnum\CommandLineParser\CommandLine.cs" Link="CommandLineParser\CommandLine.cs" />
+    <Compile Include="..\Magnum\CommandLineParser\CommandLineElementParser.cs" Link="CommandLineParser\CommandLineElementParser.cs" />
+    <Compile Include="..\Magnum\CommandLineParser\CommandLineParseException.cs" Link="CommandLineParser\CommandLineParseException.cs" />
+    <Compile Include="..\Magnum\CommandLineParser\DefinitionElement.cs" Link="CommandLineParser\DefinitionElement.cs" />
+    <Compile Include="..\Magnum\CommandLineParser\ExtensionForCommandLineElementParsers.cs" Link="CommandLineParser\ExtensionForCommandLineElementParsers.cs" />
+    <Compile Include="..\Magnum\CommandLineParser\IArgumentElement.cs" Link="CommandLineParser\IArgumentElement.cs" />
+    <Compile Include="..\Magnum\CommandLineParser\ICommandLineElement.cs" Link="CommandLineParser\ICommandLineElement.cs" />
+    <Compile Include="..\Magnum\CommandLineParser\ICommandLineElementParser.cs" Link="CommandLineParser\ICommandLineElementParser.cs" />
+    <Compile Include="..\Magnum\CommandLineParser\ICommandLineParser.cs" Link="CommandLineParser\ICommandLineParser.cs" />
+    <Compile Include="..\Magnum\CommandLineParser\IDefinitionElement.cs" Link="CommandLineParser\IDefinitionElement.cs" />
+    <Compile Include="..\Magnum\CommandLineParser\IInitializeParser.cs" Link="CommandLineParser\IInitializeParser.cs" />
+    <Compile Include="..\Magnum\CommandLineParser\ISwitchElement.cs" Link="CommandLineParser\ISwitchElement.cs" />
+    <Compile Include="..\Magnum\CommandLineParser\ITokenElement.cs" Link="CommandLineParser\ITokenElement.cs" />
+    <Compile Include="..\Magnum\CommandLineParser\MonadicCommandLineParser.cs" Link="CommandLineParser\MonadicCommandLineParser.cs" />
+    <Compile Include="..\Magnum\CommandLineParser\StringCommandLineParser.cs" Link="CommandLineParser\StringCommandLineParser.cs" />
+    <Compile Include="..\Magnum\CommandLineParser\SwitchElement.cs" Link="CommandLineParser\SwitchElement.cs" />
+    <Compile Include="..\Magnum\CommandLineParser\TextCommandLineParser.cs" Link="CommandLineParser\TextCommandLineParser.cs" />
+    <Compile Include="..\Magnum\CommandLineParser\TokenElement.cs" Link="CommandLineParser\TokenElement.cs" />
+    <Compile Include="..\Magnum\ComparisonComparer.cs" Link="ComparisonComparer.cs" />
+    <Compile Include="..\Magnum\Concurrency\Atomic.cs" Link="Concurrency\Atomic.cs" />
+    <Compile Include="..\Magnum\Concurrency\CountDownLatch.cs" Link="Concurrency\CountDownLatch.cs" />
+    <Compile Include="..\Magnum\Concurrency\EmptyImmutableList.cs" Link="Concurrency\EmptyImmutableList.cs" />
+    <Compile Include="..\Magnum\Concurrency\EmptyImmutableQueue.cs" Link="Concurrency\EmptyImmutableQueue.cs" />
+    <Compile Include="..\Magnum\Concurrency\ImmutableList.cs" Link="Concurrency\ImmutableList.cs" />
+    <Compile Include="..\Magnum\Concurrency\ImmutableQueue.cs" Link="Concurrency\ImmutableQueue.cs" />
+    <Compile Include="..\Magnum\Concurrency\Internal\AtomicDouble.cs" Link="Concurrency\Internal\AtomicDouble.cs" />
+    <Compile Include="..\Magnum\Concurrency\Internal\AtomicFloat.cs" Link="Concurrency\Internal\AtomicFloat.cs" />
+    <Compile Include="..\Magnum\Concurrency\Internal\AtomicInt32.cs" Link="Concurrency\Internal\AtomicInt32.cs" />
+    <Compile Include="..\Magnum\Concurrency\Internal\AtomicInt64.cs" Link="Concurrency\Internal\AtomicInt64.cs" />
+    <Compile Include="..\Magnum\Concurrency\Internal\AtomicObject.cs" Link="Concurrency\Internal\AtomicObject.cs" />
+    <Compile Include="..\Magnum\Concurrency\Internal\AtomicReference.cs" Link="Concurrency\Internal\AtomicReference.cs" />
+    <Compile Include="..\Magnum\Concurrency\MultipleElementImmutableList.cs" Link="Concurrency\MultipleElementImmutableList.cs" />
+    <Compile Include="..\Magnum\Concurrency\MultipleElementImmutableQueue.cs" Link="Concurrency\MultipleElementImmutableQueue.cs" />
+    <Compile Include="..\Magnum\Concurrency\SingleElementImmutableList.cs" Link="Concurrency\SingleElementImmutableList.cs" />
+    <Compile Include="..\Magnum\Concurrency\SingleElementImmutableQueue.cs" Link="Concurrency\SingleElementImmutableQueue.cs" />
+    <Compile Include="..\Magnum\Configuration\ConfigurationBinder.cs" Link="Configuration\ConfigurationBinder.cs" />
+    <Compile Include="..\Magnum\Configuration\ConfigurationBinderConfigurator.cs" Link="Configuration\ConfigurationBinderConfigurator.cs" />
+    <Compile Include="..\Magnum\Configuration\ConfigurationBinderFactory.cs" Link="Configuration\ConfigurationBinderFactory.cs" />
+    <Compile Include="..\Magnum\Configuration\ConfigurationBinderFactoryMethod.cs" Link="Configuration\ConfigurationBinderFactoryMethod.cs" />
+    <Compile Include="..\Magnum\Configuration\Internal\ConfigurationBinderConfiguratorImpl.cs" Link="Configuration\Internal\ConfigurationBinderConfiguratorImpl.cs" />
+    <Compile Include="..\Magnum\Configuration\Internal\ConfigurationBinderContext.cs" Link="Configuration\Internal\ConfigurationBinderContext.cs" />
+    <Compile Include="..\Magnum\Configuration\Internal\ConfigurationBinderImpl.cs" Link="Configuration\Internal\ConfigurationBinderImpl.cs" />
+    <Compile Include="..\Magnum\Context\TypedKey.cs" Link="Context\TypedKey.cs" />
+    <Compile Include="..\Magnum\Cryptography\DpapiCryptographyService.cs" Link="Cryptography\DpapiCryptographyService.cs" />
+    <Compile Include="..\Magnum\Cryptography\EncryptedStream.cs" Link="Cryptography\EncryptedStream.cs" />
+    <Compile Include="..\Magnum\Cryptography\EncryptedText.cs" Link="Cryptography\EncryptedText.cs" />
+    <Compile Include="..\Magnum\Cryptography\HashingService.cs" Link="Cryptography\HashingService.cs" />
+    <Compile Include="..\Magnum\Cryptography\ICryptographyService.cs" Link="Cryptography\ICryptographyService.cs" />
+    <Compile Include="..\Magnum\Cryptography\MacHashingService.cs" Link="Cryptography\MacHashingService.cs" />
+    <Compile Include="..\Magnum\Cryptography\PKI\IPkiCryptographyService.cs" Link="Cryptography\PKI\IPkiCryptographyService.cs" />
+    <Compile Include="..\Magnum\Cryptography\PKI\KeyPair.cs" Link="Cryptography\PKI\KeyPair.cs" />
+    <Compile Include="..\Magnum\Cryptography\PKI\PrivateKey.cs" Link="Cryptography\PKI\PrivateKey.cs" />
+    <Compile Include="..\Magnum\Cryptography\PKI\PublicKeyGenerator.cs" Link="Cryptography\PKI\PublicKeyGenerator.cs" />
+    <Compile Include="..\Magnum\Cryptography\PKI\RsaCryptographyService.cs" Link="Cryptography\PKI\RsaCryptographyService.cs" />
+    <Compile Include="..\Magnum\Cryptography\RijndaelCryptographyService.cs" Link="Cryptography\RijndaelCryptographyService.cs" />
+    <Compile Include="..\Magnum\Cryptography\SHA1HashingService.cs" Link="Cryptography\SHA1HashingService.cs" />
+    <Compile Include="..\Magnum\Cryptography\SHA512HashingService.cs" Link="Cryptography\SHA512HashingService.cs" />
+    <Compile Include="..\Magnum\Cryptography\Sha512HMacHashingService.cs" Link="Cryptography\Sha512HMacHashingService.cs" />
+    <Compile Include="..\Magnum\Extensions\ExtensionsToAction.cs" Link="Extensions\ExtensionsToAction.cs" />
+    <Compile Include="..\Magnum\Extensions\ExtensionsToAttributes.cs" Link="Extensions\ExtensionsToAttributes.cs" />
+    <Compile Include="..\Magnum\Extensions\ExtensionsToDateTime.cs" Link="Extensions\ExtensionsToDateTime.cs" />
+    <Compile Include="..\Magnum\Extensions\ExtensionsToDictionary.cs" Link="Extensions\ExtensionsToDictionary.cs" />
+    <Compile Include="..\Magnum\Extensions\ExtensionsToDisposable.cs" Link="Extensions\ExtensionsToDisposable.cs" />
+    <Compile Include="..\Magnum\Extensions\ExtensionsToEnumerable.cs" Link="Extensions\ExtensionsToEnumerable.cs" />
+    <Compile Include="..\Magnum\Extensions\ExtensionsToEventHandler.cs" Link="Extensions\ExtensionsToEventHandler.cs" />
+    <Compile Include="..\Magnum\Extensions\ExtensionsToExpression.cs" Link="Extensions\ExtensionsToExpression.cs" />
+    <Compile Include="..\Magnum\Extensions\ExtensionsToGenerics.cs" Link="Extensions\ExtensionsToGenerics.cs" />
+    <Compile Include="..\Magnum\Extensions\ExtensionsToInt32.cs" Link="Extensions\ExtensionsToInt32.cs" />
+    <Compile Include="..\Magnum\Extensions\ExtensionsToInterfaces.cs" Link="Extensions\ExtensionsToInterfaces.cs" />
+    <Compile Include="..\Magnum\Extensions\ExtensionsToObject.cs" Link="Extensions\ExtensionsToObject.cs" />
+    <Compile Include="..\Magnum\Extensions\ExtensionsToObjectForMaybeMonad.cs" Link="Extensions\ExtensionsToObjectForMaybeMonad.cs" />
+    <Compile Include="..\Magnum\Extensions\ExtensionsToRange.cs" Link="Extensions\ExtensionsToRange.cs" />
+    <Compile Include="..\Magnum\Extensions\ExtensionsToStream.cs" Link="Extensions\ExtensionsToStream.cs" />
+    <Compile Include="..\Magnum\Extensions\ExtensionsToString.cs" Link="Extensions\ExtensionsToString.cs" />
+    <Compile Include="..\Magnum\Extensions\ExtensionsToTimeSpan.cs" Link="Extensions\ExtensionsToTimeSpan.cs" />
+    <Compile Include="..\Magnum\Extensions\ExtensionsToType.cs" Link="Extensions\ExtensionsToType.cs" />
+    <Compile Include="..\Magnum\Extensions\ExtensionsToUri.cs" Link="Extensions\ExtensionsToUri.cs" />
+    <Compile Include="..\Magnum\FileSystem\Events\DirectoryChanged.cs" Link="FileSystem\Events\DirectoryChanged.cs" />
+    <Compile Include="..\Magnum\FileSystem\Events\DirectoryCreated.cs" Link="FileSystem\Events\DirectoryCreated.cs" />
+    <Compile Include="..\Magnum\FileSystem\Events\DirectoryRenamed.cs" Link="FileSystem\Events\DirectoryRenamed.cs" />
+    <Compile Include="..\Magnum\FileSystem\Events\FileChanged.cs" Link="FileSystem\Events\FileChanged.cs" />
+    <Compile Include="..\Magnum\FileSystem\Events\FileCreated.cs" Link="FileSystem\Events\FileCreated.cs" />
+    <Compile Include="..\Magnum\FileSystem\Events\FileRenamed.cs" Link="FileSystem\Events\FileRenamed.cs" />
+    <Compile Include="..\Magnum\FileSystem\Events\FileSystemChanged.cs" Link="FileSystem\Events\FileSystemChanged.cs" />
+    <Compile Include="..\Magnum\FileSystem\Events\FileSystemCreated.cs" Link="FileSystem\Events\FileSystemCreated.cs" />
+    <Compile Include="..\Magnum\FileSystem\Events\FileSystemDeleted.cs" Link="FileSystem\Events\FileSystemDeleted.cs" />
+    <Compile Include="..\Magnum\FileSystem\Events\FileSystemEvent.cs" Link="FileSystem\Events\FileSystemEvent.cs" />
+    <Compile Include="..\Magnum\FileSystem\Events\FileSystemEventType.cs" Link="FileSystem\Events\FileSystemEventType.cs" />
+    <Compile Include="..\Magnum\FileSystem\Events\FileSystemRenamed.cs" Link="FileSystem\Events\FileSystemRenamed.cs" />
+    <Compile Include="..\Magnum\FileSystem\Internal\DirectoryChangedImpl.cs" Link="FileSystem\Internal\DirectoryChangedImpl.cs" />
+    <Compile Include="..\Magnum\FileSystem\Internal\DirectoryCreatedImpl.cs" Link="FileSystem\Internal\DirectoryCreatedImpl.cs" />
+    <Compile Include="..\Magnum\FileSystem\Internal\DirectoryRenamedImpl.cs" Link="FileSystem\Internal\DirectoryRenamedImpl.cs" />
+    <Compile Include="..\Magnum\FileSystem\Internal\FileChangedImpl.cs" Link="FileSystem\Internal\FileChangedImpl.cs" />
+    <Compile Include="..\Magnum\FileSystem\Internal\FileCreatedImpl.cs" Link="FileSystem\Internal\FileCreatedImpl.cs" />
+    <Compile Include="..\Magnum\FileSystem\Internal\FileRenamedImpl.cs" Link="FileSystem\Internal\FileRenamedImpl.cs" />
+    <Compile Include="..\Magnum\FileSystem\Internal\FileSystemDeletedImpl.cs" Link="FileSystem\Internal\FileSystemDeletedImpl.cs" />
+    <Compile Include="..\Magnum\FunctionTimer.cs" Link="FunctionTimer.cs" />
+    <Compile Include="..\Magnum\Graphing\Edge.cs" Link="Graphing\Edge.cs" />
+    <Compile Include="..\Magnum\Graphing\GraphData.cs" Link="Graphing\GraphData.cs" />
+    <Compile Include="..\Magnum\Graphing\Vertex.cs" Link="Graphing\Vertex.cs" />
+    <Compile Include="..\Magnum\Guard.cs" Link="Guard.cs" />
+    <Compile Include="..\Magnum\LinkedComparer.cs" Link="LinkedComparer.cs" />
+    <Compile Include="..\Magnum\Linq\Batch.cs" Link="Linq\Batch.cs" />
+    <Compile Include="..\Magnum\Linq\Index.cs" Link="Linq\Index.cs" />
+    <Compile Include="..\Magnum\Linq\Merge.cs" Link="Linq\Merge.cs" />
+    <Compile Include="..\Magnum\Linq\Single.cs" Link="Linq\Single.cs" />
+    <Compile Include="..\Magnum\Mail\FileMailServer.cs" Link="Mail\FileMailServer.cs" />
+    <Compile Include="..\Magnum\Mail\IMailServer.cs" Link="Mail\IMailServer.cs" />
+    <Compile Include="..\Magnum\Mail\NullMailServer.cs" Link="Mail\NullMailServer.cs" />
+    <Compile Include="..\Magnum\Mail\SmtpMailServer.cs" Link="Mail\SmtpMailServer.cs" />
+    <Compile Include="..\Magnum\Mapper.cs" Link="Mapper.cs" />
+    <Compile Include="..\Magnum\Metrics\IMonitor.cs" Link="Metrics\IMonitor.cs" />
+    <Compile Include="..\Magnum\Metrics\Monitor\CountMonitor.cs" Link="Metrics\Monitor\CountMonitor.cs" />
+    <Compile Include="..\Magnum\Metrics\Monitor\ExecutionMonitor.cs" Link="Metrics\Monitor\ExecutionMonitor.cs" />
+    <Compile Include="..\Magnum\Metrics\Monitor\FlowMonitor.cs" Link="Metrics\Monitor\FlowMonitor.cs" />
+    <Compile Include="..\Magnum\Metrics\Monitor\MonitorBase.cs" Link="Metrics\Monitor\MonitorBase.cs" />
+    <Compile Include="..\Magnum\Metrics\Monitor\ProcessMonitor.cs" Link="Metrics\Monitor\ProcessMonitor.cs" />
+    <Compile Include="..\Magnum\Metrics\Monitor\SuccessRateMonitor.cs" Link="Metrics\Monitor\SuccessRateMonitor.cs" />
+    <Compile Include="..\Magnum\Monads\Parser\AbstractCharacterParser.cs" Link="Monads\Parser\AbstractCharacterParser.cs" />
+    <Compile Include="..\Magnum\Monads\Parser\AbstractParser.cs" Link="Monads\Parser\AbstractParser.cs" />
+    <Compile Include="..\Magnum\Monads\Parser\MonadParserExtensions.cs" Link="Monads\Parser\MonadParserExtensions.cs" />
+    <Compile Include="..\Magnum\Monads\Parser\Parser.cs" Link="Monads\Parser\Parser.cs" />
+    <Compile Include="..\Magnum\Monads\Parser\Result.cs" Link="Monads\Parser\Result.cs" />
+    <Compile Include="..\Magnum\Parsers\ExtensionsToRangeParser.cs" Link="Parsers\ExtensionsToRangeParser.cs" />
+    <Compile Include="..\Magnum\Parsers\GreaterThanElement.cs" Link="Parsers\GreaterThanElement.cs" />
+    <Compile Include="..\Magnum\Parsers\IRangeElement.cs" Link="Parsers\IRangeElement.cs" />
+    <Compile Include="..\Magnum\Parsers\IRangeParser.cs" Link="Parsers\IRangeParser.cs" />
+    <Compile Include="..\Magnum\Parsers\LessThanElement.cs" Link="Parsers\LessThanElement.cs" />
+    <Compile Include="..\Magnum\Parsers\RangeElement.cs" Link="Parsers\RangeElement.cs" />
+    <Compile Include="..\Magnum\Parsers\RangeParser.cs" Link="Parsers\RangeParser.cs" />
+    <Compile Include="..\Magnum\Parsers\RangeParserBase.cs" Link="Parsers\RangeParserBase.cs" />
+    <Compile Include="..\Magnum\Parsers\StartsWithElement.cs" Link="Parsers\StartsWithElement.cs" />
+    <Compile Include="..\Magnum\Parsers\StringRangeParser.cs" Link="Parsers\StringRangeParser.cs" />
+    <Compile Include="..\Magnum\PerformanceCounters\CategoryConfiguration.cs" Link="PerformanceCounters\CategoryConfiguration.cs" />
+    <Compile Include="..\Magnum\PerformanceCounters\Counter.cs" Link="PerformanceCounters\Counter.cs" />
+    <Compile Include="..\Magnum\PerformanceCounters\CounterCategory.cs" Link="PerformanceCounters\CounterCategory.cs" />
+    <Compile Include="..\Magnum\PerformanceCounters\CounterConfiguration.cs" Link="PerformanceCounters\CounterConfiguration.cs" />
+    <Compile Include="..\Magnum\PerformanceCounters\CounterRegistry.cs" Link="PerformanceCounters\CounterRegistry.cs" />
+    <Compile Include="..\Magnum\PerformanceCounters\CounterRepository.cs" Link="PerformanceCounters\CounterRepository.cs" />
+    <Compile Include="..\Magnum\PerformanceCounters\CounterRepositoryConfigurator.cs" Link="PerformanceCounters\CounterRepositoryConfigurator.cs" />
+    <Compile Include="..\Magnum\PerformanceCounters\InstancePerformanceCounter.cs" Link="PerformanceCounters\InstancePerformanceCounter.cs" />
+    <Compile Include="..\Magnum\PerformanceCounters\NullPerformanceCounter.cs" Link="PerformanceCounters\NullPerformanceCounter.cs" />
+    <Compile Include="..\Magnum\PerformanceCounters\PerformanceCounterConfiguration.cs" Link="PerformanceCounters\PerformanceCounterConfiguration.cs" />
+    <Compile Include="..\Magnum\PerformanceCounters\WindowsCounterConfiguration.cs" Link="PerformanceCounters\WindowsCounterConfiguration.cs" />
+    <Compile Include="..\Magnum\Pipeline\ExtensionMethods.cs" Link="Pipeline\ExtensionMethods.cs" />
+    <Compile Include="..\Magnum\Pipeline\IConsumer.cs" Link="Pipeline\IConsumer.cs" />
+    <Compile Include="..\Magnum\Pipeline\IInterceptorConfigurator.cs" Link="Pipeline\IInterceptorConfigurator.cs" />
+    <Compile Include="..\Magnum\Pipeline\InterceptionBinder.cs" Link="Pipeline\InterceptionBinder.cs" />
+    <Compile Include="..\Magnum\Pipeline\ISubscriptionScope.cs" Link="Pipeline\ISubscriptionScope.cs" />
+    <Compile Include="..\Magnum\Pipeline\MessageConsumer.cs" Link="Pipeline\MessageConsumer.cs" />
+    <Compile Include="..\Magnum\Pipeline\Messages\SubscriberAdded.cs" Link="Pipeline\Messages\SubscriberAdded.cs" />
+    <Compile Include="..\Magnum\Pipeline\Messages\SubscriberRemoved.cs" Link="Pipeline\Messages\SubscriberRemoved.cs" />
+    <Compile Include="..\Magnum\Pipeline\Pipe.cs" Link="Pipeline\Pipe.cs" />
+    <Compile Include="..\Magnum\Pipeline\PipelineException.cs" Link="Pipeline\PipelineException.cs" />
+    <Compile Include="..\Magnum\Pipeline\PipeSegmentType.cs" Link="Pipeline\PipeSegmentType.cs" />
+    <Compile Include="..\Magnum\Pipeline\Roles\ISubscriberEvent.cs" Link="Pipeline\Roles\ISubscriberEvent.cs" />
+    <Compile Include="..\Magnum\Pipeline\Segments\EndSegment.cs" Link="Pipeline\Segments\EndSegment.cs" />
+    <Compile Include="..\Magnum\Pipeline\Segments\FilterSegment.cs" Link="Pipeline\Segments\FilterSegment.cs" />
+    <Compile Include="..\Magnum\Pipeline\Segments\InputSegment.cs" Link="Pipeline\Segments\InputSegment.cs" />
+    <Compile Include="..\Magnum\Pipeline\Segments\InterceptorConfigurator.cs" Link="Pipeline\Segments\InterceptorConfigurator.cs" />
+    <Compile Include="..\Magnum\Pipeline\Segments\InterceptorSegment.cs" Link="Pipeline\Segments\InterceptorSegment.cs" />
+    <Compile Include="..\Magnum\Pipeline\Segments\MessageConsumerSegment.cs" Link="Pipeline\Segments\MessageConsumerSegment.cs" />
+    <Compile Include="..\Magnum\Pipeline\Segments\PipeSegment.cs" Link="Pipeline\Segments\PipeSegment.cs" />
+    <Compile Include="..\Magnum\Pipeline\Segments\RecipientListSegment.cs" Link="Pipeline\Segments\RecipientListSegment.cs" />
+    <Compile Include="..\Magnum\Pipeline\SegmentUnbinder.cs" Link="Pipeline\SegmentUnbinder.cs" />
+    <Compile Include="..\Magnum\Pipeline\SubscriberBinder.cs" Link="Pipeline\SubscriberBinder.cs" />
+    <Compile Include="..\Magnum\Pipeline\SubscriptionScope.cs" Link="Pipeline\SubscriptionScope.cs" />
+    <Compile Include="..\Magnum\Pipeline\Unsubscriber.cs" Link="Pipeline\Unsubscriber.cs" />
+    <Compile Include="..\Magnum\Pipeline\Visitors\AbstractPipeVisitor.cs" Link="Pipeline\Visitors\AbstractPipeVisitor.cs" />
+    <Compile Include="..\Magnum\Pipeline\Visitors\ClonePipelineVisitor.cs" Link="Pipeline\Visitors\ClonePipelineVisitor.cs" />
+    <Compile Include="..\Magnum\Pipeline\Visitors\GraphPipelineVisitor.cs" Link="Pipeline\Visitors\GraphPipelineVisitor.cs" />
+    <Compile Include="..\Magnum\Pipeline\Visitors\PipelineGraphData.cs" Link="Pipeline\Visitors\PipelineGraphData.cs" />
+    <Compile Include="..\Magnum\Pipeline\Visitors\TracePipeVisitor.cs" Link="Pipeline\Visitors\TracePipeVisitor.cs" />
+    <Compile Include="..\Magnum\Policies\CircuitBreaker.cs" Link="Policies\CircuitBreaker.cs" />
+    <Compile Include="..\Magnum\Policies\CircuitBreakerPolicy.cs" Link="Policies\CircuitBreakerPolicy.cs" />
+    <Compile Include="..\Magnum\Policies\ExceptionHandler.cs" Link="Policies\ExceptionHandler.cs" />
+    <Compile Include="..\Magnum\Policies\ExceptionPolicy.cs" Link="Policies\ExceptionPolicy.cs" />
+    <Compile Include="..\Magnum\Policies\PolicyBuilder.cs" Link="Policies\PolicyBuilder.cs" />
+    <Compile Include="..\Magnum\Policies\RetryPolicy.cs" Link="Policies\RetryPolicy.cs" />
+    <Compile Include="..\Magnum\Range.cs" Link="Range.cs" />
+    <Compile Include="..\Magnum\RangeBuilder.cs" Link="RangeBuilder.cs" />
+    <Compile Include="..\Magnum\RangeEnumerator.cs" Link="RangeEnumerator.cs" />
+    <Compile Include="..\Magnum\Reflection\AnonymousObjectDictionaryConverter.cs" Link="Reflection\AnonymousObjectDictionaryConverter.cs" />
+    <Compile Include="..\Magnum\Reflection\CurryExpressionVisitor.cs" Link="Reflection\CurryExpressionVisitor.cs" />
+    <Compile Include="..\Magnum\Reflection\ExpressionVisitor.cs" Link="Reflection\ExpressionVisitor.cs" />
+    <Compile Include="..\Magnum\Reflection\ExtensionsForArgumentMatching.cs" Link="Reflection\ExtensionsForArgumentMatching.cs" />
+    <Compile Include="..\Magnum\Reflection\ExtensionsForGenericArguments.cs" Link="Reflection\ExtensionsForGenericArguments.cs" />
+    <Compile Include="..\Magnum\Reflection\ExtensionsToExpressions.cs" Link="Reflection\ExtensionsToExpressions.cs" />
+    <Compile Include="..\Magnum\Reflection\ExtensionsToFastActivator.cs" Link="Reflection\ExtensionsToFastActivator.cs" />
+    <Compile Include="..\Magnum\Reflection\ExtensionsToGet.cs" Link="Reflection\ExtensionsToGet.cs" />
+    <Compile Include="..\Magnum\Reflection\ExtensionsToSafeProperty.cs" Link="Reflection\ExtensionsToSafeProperty.cs" />
+    <Compile Include="..\Magnum\Reflection\FastActivator.1.cs" Link="Reflection\FastActivator.1.cs" />
+    <Compile Include="..\Magnum\Reflection\FastActivator.2.cs" Link="Reflection\FastActivator.2.cs" />
+    <Compile Include="..\Magnum\Reflection\FastActivator.3.cs" Link="Reflection\FastActivator.3.cs" />
+    <Compile Include="..\Magnum\Reflection\FastActivator.cs" Link="Reflection\FastActivator.cs" />
+    <Compile Include="..\Magnum\Reflection\FastActivatorBase.cs" Link="Reflection\FastActivatorBase.cs" />
+    <Compile Include="..\Magnum\Reflection\FastActivatorException.cs" Link="Reflection\FastActivatorException.cs" />
+    <Compile Include="..\Magnum\Reflection\FastCollection.cs" Link="Reflection\FastCollection.cs" />
+    <Compile Include="..\Magnum\Reflection\FastInvoker.1.cs" Link="Reflection\FastInvoker.1.cs" />
+    <Compile Include="..\Magnum\Reflection\FastInvoker.2.cs" Link="Reflection\FastInvoker.2.cs" />
+    <Compile Include="..\Magnum\Reflection\FastInvokerBase.cs" Link="Reflection\FastInvokerBase.cs" />
+    <Compile Include="..\Magnum\Reflection\FastProperty.cs" Link="Reflection\FastProperty.cs" />
+    <Compile Include="..\Magnum\Reflection\FastPropertyCache.cs" Link="Reflection\FastPropertyCache.cs" />
+    <Compile Include="..\Magnum\Reflection\GenericFastActivator.cs" Link="Reflection\GenericFastActivator.cs" />
+    <Compile Include="..\Magnum\Reflection\GetProperty.cs" Link="Reflection\GetProperty.cs" />
+    <Compile Include="..\Magnum\Reflection\GetValue.cs" Link="Reflection\GetValue.cs" />
+    <Compile Include="..\Magnum\Reflection\IFastActivator.cs" Link="Reflection\IFastActivator.cs" />
+    <Compile Include="..\Magnum\Reflection\IFastInvoker.cs" Link="Reflection\IFastInvoker.cs" />
+    <Compile Include="..\Magnum\Reflection\InterfaceImplementationExtensions.cs" Link="Reflection\InterfaceImplementationExtensions.cs" />
+    <Compile Include="..\Magnum\Reflection\InterfaceImplementationInitializer.cs" Link="Reflection\InterfaceImplementationInitializer.cs" />
+    <Compile Include="..\Magnum\Reflection\ReflectiveVisitorBase.cs" Link="Reflection\ReflectiveVisitorBase.cs" />
+    <Compile Include="..\Magnum\Reflection\SafeGetPropertyFactory.cs" Link="Reflection\SafeGetPropertyFactory.cs" />
+    <Compile Include="..\Magnum\Reflection\SafeProperty.1.cs" Link="Reflection\SafeProperty.1.cs" />
+    <Compile Include="..\Magnum\Reflection\SafeProperty.cs" Link="Reflection\SafeProperty.cs" />
+    <Compile Include="..\Magnum\Reflection\SafePropertyVisitor.cs" Link="Reflection\SafePropertyVisitor.cs" />
+    <Compile Include="..\Magnum\Reflection\SetProperty.cs" Link="Reflection\SetProperty.cs" />
+    <Compile Include="..\Magnum\Reflection\SetValue.cs" Link="Reflection\SetValue.cs" />
+    <Compile Include="..\Magnum\Reflection\TypeSpecializationExtensions.cs" Link="Reflection\TypeSpecializationExtensions.cs" />
+    <Compile Include="..\Magnum\ReverseComparer.cs" Link="ReverseComparer.cs" />
+    <Compile Include="..\Magnum\Serialization\FastTextSerializer.cs" Link="Serialization\FastTextSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\FastText\FastTextArraySerializer.cs" Link="Serialization\FastText\FastTextArraySerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\FastText\FastTextDictionarySerializer.cs" Link="Serialization\FastText\FastTextDictionarySerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\FastText\FastTextElementParser.cs" Link="Serialization\FastText\FastTextElementParser.cs" />
+    <Compile Include="..\Magnum\Serialization\FastText\FastTextIDictionarySerializer.cs" Link="Serialization\FastText\FastTextIDictionarySerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\FastText\FastTextIListSerializer.cs" Link="Serialization\FastText\FastTextIListSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\FastText\FastTextKeyElementParser.cs" Link="Serialization\FastText\FastTextKeyElementParser.cs" />
+    <Compile Include="..\Magnum\Serialization\FastText\FastTextListSerializer.cs" Link="Serialization\FastText\FastTextListSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\FastText\FastTextObjectSerializer.cs" Link="Serialization\FastText\FastTextObjectSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\FastText\FastTextParser.cs" Link="Serialization\FastText\FastTextParser.cs" />
+    <Compile Include="..\Magnum\Serialization\FastText\FastTextPropertySerializer.cs" Link="Serialization\FastText\FastTextPropertySerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\FastText\FastTextPropertyTypeSerializerCache.cs" Link="Serialization\FastText\FastTextPropertyTypeSerializerCache.cs" />
+    <Compile Include="..\Magnum\Serialization\FastText\FastTextStringSerializer.cs" Link="Serialization\FastText\FastTextStringSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\FastText\FastTextSystemTypeSerializer.cs" Link="Serialization\FastText\FastTextSystemTypeSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\FastText\FastTextTypeSerializer.cs" Link="Serialization\FastText\FastTextTypeSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\FastText\FastTextTypeSerializerCache.cs" Link="Serialization\FastText\FastTextTypeSerializerCache.cs" />
+    <Compile Include="..\Magnum\Serialization\ObjectSerializer.cs" Link="Serialization\ObjectSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\PropertySerializer.cs" Link="Serialization\PropertySerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\PropertySerializerCache.cs" Link="Serialization\PropertySerializerCache.cs" />
+    <Compile Include="..\Magnum\Serialization\Serializer.cs" Link="Serialization\Serializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeReader.cs" Link="Serialization\TypeReader.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializer.cs" Link="Serialization\TypeSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializerCache.cs" Link="Serialization\TypeSerializerCache.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializerCacheImpl.cs" Link="Serialization\TypeSerializerCacheImpl.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializerLoader.cs" Link="Serialization\TypeSerializerLoader.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\BooleanSerializer.cs" Link="Serialization\TypeSerializers\BooleanSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\ByteSerializer.cs" Link="Serialization\TypeSerializers\ByteSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\CharSerializer.cs" Link="Serialization\TypeSerializers\CharSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\DateTimeOffsetSerializer.cs" Link="Serialization\TypeSerializers\DateTimeOffsetSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\DateTimeSerializer.cs" Link="Serialization\TypeSerializers\DateTimeSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\DecimalSerializer.cs" Link="Serialization\TypeSerializers\DecimalSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\DictionarySerializer.cs" Link="Serialization\TypeSerializers\DictionarySerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\DoubleSerializer.cs" Link="Serialization\TypeSerializers\DoubleSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\EnumSerializer.cs" Link="Serialization\TypeSerializers\EnumSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\FloatSerializer.cs" Link="Serialization\TypeSerializers\FloatSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\GuidSerializer.cs" Link="Serialization\TypeSerializers\GuidSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\IntSerializer.cs" Link="Serialization\TypeSerializers\IntSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\LongSerializer.cs" Link="Serialization\TypeSerializers\LongSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\NullableSerializer.cs" Link="Serialization\TypeSerializers\NullableSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\SByteSerializer.cs" Link="Serialization\TypeSerializers\SByteSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\ShortSerializer.cs" Link="Serialization\TypeSerializers\ShortSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\StringSerializer.cs" Link="Serialization\TypeSerializers\StringSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\SystemTypeSerializer.cs" Link="Serialization\TypeSerializers\SystemTypeSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\TimeSpanSerializer.cs" Link="Serialization\TypeSerializers\TimeSpanSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\TypeSerializerException.cs" Link="Serialization\TypeSerializers\TypeSerializerException.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\UIntSerializer.cs" Link="Serialization\TypeSerializers\UIntSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\ULongSerializer.cs" Link="Serialization\TypeSerializers\ULongSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\UriSerializer.cs" Link="Serialization\TypeSerializers\UriSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeSerializers\UShortSerializer.cs" Link="Serialization\TypeSerializers\UShortSerializer.cs" />
+    <Compile Include="..\Magnum\Serialization\TypeWriter.cs" Link="Serialization\TypeWriter.cs" />
+    <Compile Include="..\Magnum\StateMachine\Activity.cs" Link="StateMachine\Activity.cs" />
+    <Compile Include="..\Magnum\StateMachine\BasicEvent.cs" Link="StateMachine\BasicEvent.cs" />
+    <Compile Include="..\Magnum\StateMachine\BasicEventAction.cs" Link="StateMachine\BasicEventAction.cs" />
+    <Compile Include="..\Magnum\StateMachine\DataEvent.cs" Link="StateMachine\DataEvent.cs" />
+    <Compile Include="..\Magnum\StateMachine\DataEventAction.cs" Link="StateMachine\DataEventAction.cs" />
+    <Compile Include="..\Magnum\StateMachine\DataEventBinder.cs" Link="StateMachine\DataEventBinder.cs" />
+    <Compile Include="..\Magnum\StateMachine\Event.cs" Link="StateMachine\Event.cs" />
+    <Compile Include="..\Magnum\StateMachine\EventAction.cs" Link="StateMachine\EventAction.cs" />
+    <Compile Include="..\Magnum\StateMachine\EventActionBase.cs" Link="StateMachine\EventActionBase.cs" />
+    <Compile Include="..\Magnum\StateMachine\EventActionList.cs" Link="StateMachine\EventActionList.cs" />
+    <Compile Include="..\Magnum\StateMachine\EventBinder.cs" Link="StateMachine\EventBinder.cs" />
+    <Compile Include="..\Magnum\StateMachine\EventCombiner.cs" Link="StateMachine\EventCombiner.cs" />
+    <Compile Include="..\Magnum\StateMachine\ExceptionAction.cs" Link="StateMachine\ExceptionAction.cs" />
+    <Compile Include="..\Magnum\StateMachine\ExceptionActionDictionary.cs" Link="StateMachine\ExceptionActionDictionary.cs" />
+    <Compile Include="..\Magnum\StateMachine\ExpressionAction.cs" Link="StateMachine\ExpressionAction.cs" />
+    <Compile Include="..\Magnum\StateMachine\ExtensionsForStateMachineVisitor.cs" Link="StateMachine\ExtensionsForStateMachineVisitor.cs" />
+    <Compile Include="..\Magnum\StateMachine\GraphStateMachineVisitor.cs" Link="StateMachine\GraphStateMachineVisitor.cs" />
+    <Compile Include="..\Magnum\StateMachine\IStateMachineInspector.cs" Link="StateMachine\IStateMachineInspector.cs" />
+    <Compile Include="..\Magnum\StateMachine\IStateMachineInspectorSite.cs" Link="StateMachine\IStateMachineInspectorSite.cs" />
+    <Compile Include="..\Magnum\StateMachine\LambdaAction.cs" Link="StateMachine\LambdaAction.cs" />
+    <Compile Include="..\Magnum\StateMachine\State.cs" Link="StateMachine\State.cs" />
+    <Compile Include="..\Magnum\StateMachine\StateMachine.cs" Link="StateMachine\StateMachine.cs" />
+    <Compile Include="..\Magnum\StateMachine\StateMachineException.cs" Link="StateMachine\StateMachineException.cs" />
+    <Compile Include="..\Magnum\StateMachine\StateMachineExpressionInspector.cs" Link="StateMachine\StateMachineExpressionInspector.cs" />
+    <Compile Include="..\Magnum\StateMachine\StateMachineGraphData.cs" Link="StateMachine\StateMachineGraphData.cs" />
+    <Compile Include="..\Magnum\StateMachine\StateMachineInspector.cs" Link="StateMachine\StateMachineInspector.cs" />
+    <Compile Include="..\Magnum\StateMachine\TransitionToAction.cs" Link="StateMachine\TransitionToAction.cs" />
+    <Compile Include="..\Magnum\SystemUtil.cs" Link="SystemUtil.cs" />
+    <Compile Include="..\Magnum\Threading\AsyncExecutor.cs" Link="Threading\AsyncExecutor.cs" />
+    <Compile Include="..\Magnum\Threading\AsyncResult.cs" Link="Threading\AsyncResult.cs" />
+    <Compile Include="..\Magnum\Threading\IAsyncExecutor.cs" Link="Threading\IAsyncExecutor.cs" />
+    <Compile Include="..\Magnum\Threading\ILockedObject.cs" Link="Threading\ILockedObject.cs" />
+    <Compile Include="..\Magnum\Threading\ReaderWriterLockContext.cs" Link="Threading\ReaderWriterLockContext.cs" />
+    <Compile Include="..\Magnum\Threading\ReaderWriterLockedDictionary.cs" Link="Threading\ReaderWriterLockedDictionary.cs" />
+    <Compile Include="..\Magnum\Threading\ReaderWriterLockedObject.cs" Link="Threading\ReaderWriterLockedObject.cs" />
+    <Compile Include="..\Magnum\Threading\UpgradeableLock.cs" Link="Threading\UpgradeableLock.cs" />
+    <Compile Include="..\Magnum\ThreadUtil.cs" Link="ThreadUtil.cs" />
+    <Compile Include="..\Magnum\TypeScanning\ScannerExtensions.cs" Link="TypeScanning\ScannerExtensions.cs" />
+    <Compile Include="..\Magnum\TypeScanning\TypeScanner.cs" Link="TypeScanning\TypeScanner.cs" />
+    <Compile Include="..\Magnum\Validation\Advanced\MatchesConfigurator.cs" Link="Validation\Advanced\MatchesConfigurator.cs" />
+    <Compile Include="..\Magnum\Validation\Advanced\MatchesExtension.cs" Link="Validation\Advanced\MatchesExtension.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\ContainsStringValidatorConfigurator.cs" Link="Validation\Conditions\ContainsStringValidatorConfigurator.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\DateTimeValidatorConfigurator.cs" Link="Validation\Conditions\DateTimeValidatorConfigurator.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\DateTimeValidatorConfiguratorImpl.cs" Link="Validation\Conditions\DateTimeValidatorConfiguratorImpl.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\EndsWithStringValidatorConfigurator.cs" Link="Validation\Conditions\EndsWithStringValidatorConfigurator.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\EnumerableConfigurator.cs" Link="Validation\Conditions\EnumerableConfigurator.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\EnumerableValidator.cs" Link="Validation\Conditions\EnumerableValidator.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\MatchesConfiguratorImpl.cs" Link="Validation\Conditions\MatchesConfiguratorImpl.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\MatchesValidator.cs" Link="Validation\Conditions\MatchesValidator.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\NestedConfigurator.cs" Link="Validation\Conditions\NestedConfigurator.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\NestedValidator.cs" Link="Validation\Conditions\NestedValidator.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\NotEmptyCollectionConfigurator.cs" Link="Validation\Conditions\NotEmptyCollectionConfigurator.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\NotEmptyConfigurator.cs" Link="Validation\Conditions\NotEmptyConfigurator.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\NotEmptyListValidator.cs" Link="Validation\Conditions\NotEmptyListValidator.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\NotEmptyValidator.cs" Link="Validation\Conditions\NotEmptyValidator.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\NotNullConfigurator.cs" Link="Validation\Conditions\NotNullConfigurator.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\NotNullValidator.cs" Link="Validation\Conditions\NotNullValidator.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\ObjectPropertyConfigurator.cs" Link="Validation\Conditions\ObjectPropertyConfigurator.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\PropertyConfigurator.cs" Link="Validation\Conditions\PropertyConfigurator.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\PropertyValidator.cs" Link="Validation\Conditions\PropertyValidator.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\StartsWithStringValidatorConfigurator.cs" Link="Validation\Conditions\StartsWithStringValidatorConfigurator.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\StringValidator.cs" Link="Validation\Conditions\StringValidator.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\StringValidatorConfigurator.cs" Link="Validation\Conditions\StringValidatorConfigurator.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\StringValidatorConfiguratorImpl.cs" Link="Validation\Conditions\StringValidatorConfiguratorImpl.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\WithinPastDateTimeValidator.cs" Link="Validation\Conditions\WithinPastDateTimeValidator.cs" />
+    <Compile Include="..\Magnum\Validation\Conditions\WithinPastDateTimeValidatorConfigurator.cs" Link="Validation\Conditions\WithinPastDateTimeValidatorConfigurator.cs" />
+    <Compile Include="..\Magnum\Validation\DateTimeExtensions.cs" Link="Validation\DateTimeExtensions.cs" />
+    <Compile Include="..\Magnum\Validation\DateTimeValidatorExtensions.cs" Link="Validation\DateTimeValidatorExtensions.cs" />
+    <Compile Include="..\Magnum\Validation\Impl\Configurator.cs" Link="Validation\Impl\Configurator.cs" />
+    <Compile Include="..\Magnum\Validation\Impl\TypeValidator.cs" Link="Validation\Impl\TypeValidator.cs" />
+    <Compile Include="..\Magnum\Validation\Impl\TypeValidatorBuilder.cs" Link="Validation\Impl\TypeValidatorBuilder.cs" />
+    <Compile Include="..\Magnum\Validation\Impl\TypeValidatorConfigurator.cs" Link="Validation\Impl\TypeValidatorConfigurator.cs" />
+    <Compile Include="..\Magnum\Validation\Impl\ValidatorBuilder.cs" Link="Validation\Impl\ValidatorBuilder.cs" />
+    <Compile Include="..\Magnum\Validation\Impl\ValidatorConfigurator.cs" Link="Validation\Impl\ValidatorConfigurator.cs" />
+    <Compile Include="..\Magnum\Validation\Impl\ValidatorViolation.cs" Link="Validation\Impl\ValidatorViolation.cs" />
+    <Compile Include="..\Magnum\Validation\NotEmptyExtension.cs" Link="Validation\NotEmptyExtension.cs" />
+    <Compile Include="..\Magnum\Validation\NotNullExtension.cs" Link="Validation\NotNullExtension.cs" />
+    <Compile Include="..\Magnum\Validation\PropertyExtension.cs" Link="Validation\PropertyExtension.cs" />
+    <Compile Include="..\Magnum\Validation\StringValidatorExtensions.cs" Link="Validation\StringValidatorExtensions.cs" />
+    <Compile Include="..\Magnum\Validation\ValidateWithExtension.cs" Link="Validation\ValidateWithExtension.cs" />
+    <Compile Include="..\Magnum\Validation\ValidationException.cs" Link="Validation\ValidationException.cs" />
+    <Compile Include="..\Magnum\Validation\Validator.cs" Link="Validation\Validator.cs" />
+    <Compile Include="..\Magnum\Validation\ValidatorExtensions.cs" Link="Validation\ValidatorExtensions.cs" />
+    <Compile Include="..\Magnum\Validation\Violation.cs" Link="Validation\Violation.cs" />
+    <Compile Include="..\Magnum\Validation\ViolationException.cs" Link="Validation\ViolationException.cs" />
+    <Compile Include="..\Magnum\ValueProviders\AccessorValueProvider.cs" Link="ValueProviders\AccessorValueProvider.cs" />
+    <Compile Include="..\Magnum\ValueProviders\CommandLineValueProvider.cs" Link="ValueProviders\CommandLineValueProvider.cs" />
+    <Compile Include="..\Magnum\ValueProviders\DictionaryValueProvider.cs" Link="ValueProviders\DictionaryValueProvider.cs" />
+    <Compile Include="..\Magnum\ValueProviders\EmptyValueProvider.cs" Link="ValueProviders\EmptyValueProvider.cs" />
+    <Compile Include="..\Magnum\ValueProviders\ExtensionsToValueProvider.cs" Link="ValueProviders\ExtensionsToValueProvider.cs" />
+    <Compile Include="..\Magnum\ValueProviders\FileValueProvider.cs" Link="ValueProviders\FileValueProvider.cs" />
+    <Compile Include="..\Magnum\ValueProviders\JsonValueProvider.cs" Link="ValueProviders\JsonValueProvider.cs" />
+    <Compile Include="..\Magnum\ValueProviders\MultipleValueProvider.cs" Link="ValueProviders\MultipleValueProvider.cs" />
+    <Compile Include="..\Magnum\ValueProviders\NestedValueProvider.cs" Link="ValueProviders\NestedValueProvider.cs" />
+    <Compile Include="..\Magnum\ValueProviders\ValueProvider.cs" Link="ValueProviders\ValueProvider.cs" />
+    <Compile Include="..\Magnum\ValueProviders\ValueProviderDecorator.cs" Link="ValueProviders\ValueProviderDecorator.cs" />
+    <Compile Include="..\Magnum\WeakReference.cs" Link="WeakReference.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Algorithms\Implementations\" />
+    <Folder Include="Binding\TypeBinders\" />
+    <Folder Include="Caching\" />
+    <Folder Include="Calendar\Holidays\" />
+    <Folder Include="Concurrency\Internal\" />
+    <Folder Include="Configuration\Internal\" />
+    <Folder Include="Cryptography\PKI\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Collections\" />
+    <Folder Include="FileSystem\Events\" />
+    <Folder Include="FileSystem\Internal\" />
+    <Folder Include="Linq\" />
+    <Folder Include="Metrics\Monitor\" />
+    <Folder Include="Monads\Parser\" />
+    <Folder Include="CommandLineParser\" />
+    <Folder Include="Context\" />
+    <Folder Include="Graphing\" />
+    <Folder Include="Mail\" />
+    <Folder Include="StateMachine\" />
+    <Folder Include="Policies\" />
+    <Folder Include="PerformanceCounters\" />
+    <Folder Include="Parsers\" />
+    <Folder Include="Pipeline\Messages\" />
+    <Folder Include="Pipeline\Visitors\" />
+    <Folder Include="Pipeline\Segments\" />
+    <Folder Include="Pipeline\Roles\" />
+    <Folder Include="Serialization\FastText\" />
+    <Folder Include="Serialization\TypeSerializers\" />
+    <Folder Include="Threading\" />
+    <Folder Include="Validation\Conditions\" />
+    <Folder Include="Validation\Advanced\" />
+    <Folder Include="Validation\Impl\" />
+    <Folder Include="ValueProviders\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.PlatformAbstractions" Version="1.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="4.5.0" />
+    <PackageReference Include="System.Reflection.Emit" Version="4.3.0" />
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="4.5.0" />
+  </ItemGroup>
+
+</Project>
