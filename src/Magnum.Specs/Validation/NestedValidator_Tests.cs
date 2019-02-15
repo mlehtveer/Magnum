@@ -69,7 +69,7 @@ namespace Magnum.Specs.Validation
 
 		Validator<Order> _validator;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void Specifying_a_nested_validator_for_a_property()
 		{
 			Validator<Customer> customerValidator = Validator.New<Customer>(x =>

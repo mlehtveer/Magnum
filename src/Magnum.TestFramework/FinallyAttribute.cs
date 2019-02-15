@@ -16,7 +16,7 @@ namespace Magnum.TestFramework
 
 
     public class FinallyAttribute :
-        TestFixtureTearDownAttribute
+        TearDownAttribute
     {
     }
 }

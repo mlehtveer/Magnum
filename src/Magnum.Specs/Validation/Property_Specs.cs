@@ -37,7 +37,7 @@ namespace Validation.Tests
 
 		Validator<Order> _validator;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void Should_be_able_to_create_a_validator_for_a_class()
 		{
 			_validator = Validator.New<Order>(x =>
@@ -69,7 +69,7 @@ namespace Validation.Tests
 
 		Validator<Order> _validator;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void Should_call_the_chained_validator_on_the_property()
 		{
 			_validator = Validator.New<Order>(x =>

@@ -30,7 +30,7 @@ namespace Magnum.Specs.Validation
 
 		Validator<Order> _validator;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void Using_a_not_empty_and_not_null_validator_on_a_string_property()
 		{
 			_validator = Validator.New<Order>(x => { x.NotNull(); });

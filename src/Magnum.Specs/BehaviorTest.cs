@@ -17,7 +17,7 @@ namespace Magnum.Specs
 	[TestFixture]
 	public abstract class BehaviorTest
 	{
-		[TestFixtureSetUp]
+		[SetUp]
 		public void Setup()
 		{
 			Given();

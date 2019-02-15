@@ -22,7 +22,7 @@ namespace Magnum.Specs.Caching
     {
         GenericTypeCache<IGeneric> _cache;
 
-        [TestFixtureSetUp]
+        [SetUp]
         public void Setup()
         {
             _cache = new GenericTypeCache<IGeneric>(typeof(GenericClass<>));
@@ -43,7 +43,9 @@ namespace Magnum.Specs.Caching
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentException))]
+        
+        // Todo Maikel Lehtveer
+        //[ExpectedException(typeof(ArgumentException))]
         public void Should_throw_an_exception_on_duplicate_add()
         {
             var x = _cache[typeof(bool)];

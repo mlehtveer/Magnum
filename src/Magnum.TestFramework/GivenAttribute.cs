@@ -18,7 +18,7 @@ namespace Magnum.TestFramework
 	/// Called once per scenario to establish the context
 	/// </summary>
 	public class GivenAttribute :
-		TestFixtureSetUpAttribute
-	{
+        SetUpAttribute
+    {
 	}
 }

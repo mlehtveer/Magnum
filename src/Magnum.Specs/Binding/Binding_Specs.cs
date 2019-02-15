@@ -14,7 +14,7 @@ namespace Magnum.Specs.Binding
         private Dictionary<string, object> _dictionary;
         private BinderTestClass _result;
 
-        [TestFixtureSetUp]
+        [SetUp]
         public void Setup()
         {
             _dictionary = new Dictionary<string, object>
@@ -101,14 +101,14 @@ namespace Magnum.Specs.Binding
             _result.Updated.HasValue.ShouldBeTrue();
         }
 
-        [Test, NotYetImplemented, Ignore]
+        [Test, NotYetImplemented, Explicit]
         public void Should_have_three_names()
         {
             _result.Names.ShouldNotBeNull();
             _result.Names.Length.ShouldEqual(3);
         }
 
-        [Test, NotYetImplemented, Ignore]
+        [Test, NotYetImplemented, Explicit]
         public void Should_have_two_subclasses()
         {
             _result.SubClasses.ShouldNotBeNull();

@@ -60,7 +60,7 @@ namespace Magnum.Specs.Validation
 
 		Validator<Order> _validator;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void Using_a_matches_expression()
 		{
 			_validator = Validator.New<Order>(x =>

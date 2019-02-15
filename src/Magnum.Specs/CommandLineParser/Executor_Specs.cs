@@ -39,7 +39,7 @@ namespace Magnum.Specs.CommandLineParser
 			Elements = new MonadicCommandLineParser().Parse(CommandLine);
 		}
 
-		[Test, Ignore]
+		[Test, Explicit]
 		public void Should_copy_the_arguments_into_the_class()
 		{
 			object arguments = FastActivator<MoveCommandArguments>.Create();

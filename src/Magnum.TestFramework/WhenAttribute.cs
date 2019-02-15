@@ -18,7 +18,7 @@ namespace Magnum.TestFramework
 	/// Called once per scenario to perform the action
 	/// </summary>
 	public class WhenAttribute :
-		TestFixtureSetUpAttribute
+		SetUpAttribute
 	{
 	}
 }

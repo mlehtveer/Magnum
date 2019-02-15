@@ -88,7 +88,7 @@ namespace Magnum.Specs.Reflection.SafePropertySpecs
 		GetProperty<A, string> _getter;
 
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void Once()
 		{
 			_getter = SafeProperty<A>.GetGetProperty(x => x.Id);

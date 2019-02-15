@@ -34,7 +34,7 @@ namespace Magnum.Specs.Validation
 
 		Validator<Order> _validator;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void Should_be_able_to_create_a_validator_for_a_class()
 		{
 			_validator = Validator.New<Order>(x =>
@@ -89,7 +89,7 @@ namespace Magnum.Specs.Validation
 
 		Validator<Order> _validator;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void Using_a_not_empty_and_not_null_validator_on_a_string_property()
 		{
 			_validator = Validator.New<Order>(x =>

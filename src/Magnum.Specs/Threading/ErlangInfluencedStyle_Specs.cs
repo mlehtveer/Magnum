@@ -25,7 +25,7 @@ namespace Magnum.Specs.Threading
     [TestFixture]
     public class ErlangInfluencedStyle_Specs
     {
-        [Test, Ignore]
+        [Test, Explicit]
         public void The_task_should_be_able_to_run_asynchronously()
         {
             ContentLoader loader = new ContentLoader();
@@ -41,7 +41,7 @@ namespace Magnum.Specs.Threading
             Trace.WriteLine("Content Length: " + loader.TotalBytesRead);
         }
 
-        [Test, Ignore]
+        [Test, Explicit]
         public void The_task_should_run_synchronously()
         {
             ContentLoader loader = new ContentLoader();

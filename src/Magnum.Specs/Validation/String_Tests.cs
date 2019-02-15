@@ -59,7 +59,7 @@ namespace Validation.Tests
 
 		Validator<Order> _validator;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void Using_a_matches_expression()
 		{
 			_validator = Validator.New<Order>(x =>
@@ -111,7 +111,7 @@ namespace Validation.Tests
 
 		Validator<Order> _validator;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void Using_a_matches_expression()
 		{
 			_validator = Validator.New<Order>(x =>
@@ -163,7 +163,7 @@ namespace Validation.Tests
 
 		Validator<Order> _validator;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void Using_a_matches_expression()
 		{
 			_validator = Validator.New<Order>(x =>

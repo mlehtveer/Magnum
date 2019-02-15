@@ -65,7 +65,7 @@ namespace Magnum.Specs.Validation
 
 		Validator<Order> _validator;
 
-		[TestFixtureSetUp]
+		[SetUp]
 		public void Validating_a_property_that_is_a_collection()
 		{
 			Validator<OrderItem> itemValidator = Validator.New<OrderItem>(x => { x.NotNull(); });

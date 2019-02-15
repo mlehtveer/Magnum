@@ -52,7 +52,8 @@ namespace Magnum.TestFramework
 
 		public static string ShouldNotBeEmpty(this string value)
 		{
-			Assert.IsNotNullOrEmpty(value);
+            Assert.IsNotNull(value);
+			Assert.IsNotEmpty(value);
 
 			return value;
 		}
