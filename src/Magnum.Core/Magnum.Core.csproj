@@ -3,14 +3,24 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <RootNamespace>Magnum</RootNamespace>
-    <PackageId>Magnum</PackageId>
+    <PackageId>Magnum.Core</PackageId>
     <Company></Company>
-    <Authors>Magnum</Authors>
+    <Authors>Chris Patterson, Dru Sellers</Authors>
     <Product>Magnum</Product>
+    <Version>2.1.4</Version>
+    <PackageProjectUrl>https://github.com/mlehtveer/Magnum</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/phatboyg/Magnum/blob/master/LICENSE</PackageLicenseUrl>
+    <Description>Magnum is a library for the larger than average developer</Description>
+    <Configurations>Debug;Release;Build</Configurations>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Build|AnyCPU'">
+    <OutputPath>..\..\build_output\Magnum\Magnum\</OutputPath>
+    <DocumentationFile>..\..\bin\Magnum.XML</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

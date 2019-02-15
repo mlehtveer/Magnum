@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Magnum.Core</id>
+    <version>2.1.4</version>
+    <title></title>
+    <authors>Chris Patterson,Dru Sellers</authors>
+    <owners></owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/phatboyg/Magnum/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/mlehtveer/Magnum</projectUrl>
+    <description>Magnum is a library for the larger than average developer</description>
+    <language>en-US</language>
+	<dependencies>
+      <dependency id="Newtonsoft.Json" version="12.0.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="build_output\Magnum\Magnum\netcoreapp2.1\Magnum.Core.deps.json" target="lib\netcoreapp2.1\Magnum.Core.deps.json" />
+    <file src="build_output\Magnum\Magnum\netcoreapp2.1\Magnum.Core.dll" target="lib\netcoreapp2.1\Magnum.Core.dll" />
+    <file src="build_output\Magnum\Magnum\netcoreapp2.1\Magnum.Core.pdb" target="lib\netcoreapp2.1\Magnum.Core.pdb" />
+    <file src="build_output\Magnum\Magnum\netcoreapp2.1\Magnum.XML" target="lib\netcoreapp2.1\Magnum.XML" />
+  </files>
+</package>

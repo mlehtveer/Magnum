@@ -78,7 +78,7 @@ namespace Magnum.TypeScanning
 
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
 
-            // Todo 
+            // Todo Maikel Lehtveer
             string binPath = ""; // AppDomain.CurrentDomain.SetupInformation.PrivateBinPath;
 
             throw new NotImplementedException();
