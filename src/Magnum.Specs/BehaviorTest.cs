@@ -14,10 +14,12 @@ namespace Magnum.Specs
 {
 	using NUnit.Framework;
 
-	[TestFixture]
+    [SetUpFixture]
+    //[TestFixture]
 	public abstract class BehaviorTest
 	{
-		[SetUp]
+        [OneTimeSetUp]
+        //[SetUp]
 		public void Setup()
 		{
 			Given();

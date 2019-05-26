@@ -21,7 +21,8 @@ namespace Magnum.Specs
     [SetUpFixture]
 	public class LogSetup
 	{
-		[SetUp]
+        [OneTimeSetUp]
+        //[SetUp]
 		public void SetupLog4Net()
 		{
 			string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);

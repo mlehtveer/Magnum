@@ -44,13 +44,11 @@ namespace Magnum.Specs.Caching
 
         [Test]
         
-        // Todo Maikel Lehtveer
-        //[ExpectedException(typeof(ArgumentException))]
         public void Should_throw_an_exception_on_duplicate_add()
         {
             var x = _cache[typeof(bool)];
 
-            _cache.Add(typeof(bool), new GenericClass<bool>());
+            Assert.Throws(typeof(ArgumentException), () => _cache.Add(typeof(bool), new GenericClass<bool>()));
         }
 
 
