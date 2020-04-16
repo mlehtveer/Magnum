@@ -1,13 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFrameworks>netcoreapp2.1;netcoreapp2.2</TargetFrameworks>
     <RootNamespace>Magnum</RootNamespace>
     <PackageId>Magnum.Core</PackageId>
     <Company></Company>
     <Authors>Chris Patterson, Dru Sellers</Authors>
     <Product>Magnum</Product>
-    <Version>2.1.4</Version>
+    <Version>2.1.5</Version>
     <PackageProjectUrl>https://github.com/mlehtveer/Magnum</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/phatboyg/Magnum/blob/master/LICENSE</PackageLicenseUrl>
     <Description>Magnum is a library for the larger than average developer</Description>
@@ -547,10 +547,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.PlatformAbstractions" Version="1.1.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
-    <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="4.5.0" />
-    <PackageReference Include="System.Reflection.Emit" Version="4.3.0" />
-    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="4.5.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="4.7.0" />
+    <PackageReference Include="System.Reflection.Emit" Version="4.7.0" />
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="4.7.0" />
   </ItemGroup>
 
 </Project>

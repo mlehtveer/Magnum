@@ -2,23 +2,25 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Magnum.Core</id>
-    <version>2.1.4</version>
+    <version>2.1.5</version>
     <title></title>
     <authors>Chris Patterson,Dru Sellers</authors>
-    <owners></owners>
+    <owners>Chris Patterson,Dru Sellers</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <licenseUrl>https://github.com/phatboyg/Magnum/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/mlehtveer/Magnum</projectUrl>
     <description>Magnum is a library for the larger than average developer</description>
     <language>en-US</language>
-	<dependencies>
-      <dependency id="Newtonsoft.Json" version="12.0.1" />
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="12.0.3" />
     </dependencies>
   </metadata>
   <files>
-    <file src="build_output\Magnum\Magnum\netcoreapp2.1\Magnum.Core.deps.json" target="lib\netcoreapp2.1\Magnum.Core.deps.json" />
-    <file src="build_output\Magnum\Magnum\netcoreapp2.1\Magnum.Core.dll" target="lib\netcoreapp2.1\Magnum.Core.dll" />
-    <file src="build_output\Magnum\Magnum\netcoreapp2.1\Magnum.Core.pdb" target="lib\netcoreapp2.1\Magnum.Core.pdb" />
-    <file src="build_output\Magnum\Magnum\netcoreapp2.1\Magnum.XML" target="lib\netcoreapp2.1\Magnum.XML" />
+    <file src="src\Magnum.Core\bin\Release\netcoreapp2.1\Magnum.Core.deps.json" target="lib\netcoreapp2.1" />
+    <file src="src\Magnum.Core\bin\Release\netcoreapp2.1\Magnum.Core.dll" target="lib\netcoreapp2.1" />
+    <file src="src\Magnum.Core\bin\Release\netcoreapp2.1\Magnum.Core.pdb" target="lib\netcoreapp2.1" />
+    <file src="src\Magnum.Core\bin\Release\netcoreapp2.2\Magnum.Core.deps.json" target="lib\netcoreapp2.2" />
+    <file src="src\Magnum.Core\bin\Release\netcoreapp2.2\Magnum.Core.dll" target="lib\netcoreapp2.2" />
+    <file src="src\Magnum.Core\bin\Release\netcoreapp2.2\Magnum.Core.pdb" target="lib\netcoreapp2.2" />
   </files>
 </package>
